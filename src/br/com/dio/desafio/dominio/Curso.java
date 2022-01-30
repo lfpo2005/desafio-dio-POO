@@ -3,19 +3,22 @@ package br.com.dio.desafio.dominio;
 import lombok.Data;
 
 @Data
+public class Curso extends Conteudo{
 
-public class Curso {
+       private int cargaHoraria;
 
-    private String titulo;
-    private String descricao;
-    private int cargaHoraria;
+    public double calcularXP() {
+        return XP_PADRAO * cargaHoraria;
+    }
 
     @Override
     public String toString() {
         return "Curso{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", cargaHoraria=" + cargaHoraria +
+                "titulo = '" + getTitulo() + '\'' +
+                ", descricao = '" + getDescricao() + '\'' +
+                ", cargaHoraria = " + cargaHoraria +
                 '}';
     }
+
+
 }
